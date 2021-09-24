@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Platfotm.cs" />
     <Compile Include="Assets\Scripts\Controller\GameController.cs" />
+    <Compile Include="Assets\UIController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
