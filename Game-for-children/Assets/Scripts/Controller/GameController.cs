@@ -97,7 +97,7 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-        Platforms[] = GameObject.FindGameObjectsWithTag("Platform");
+        //Platforms[] = GameObject.FindGameObjectsWithTag("Platform");
     }
 
     public void Timer()
