@@ -97,7 +97,7 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-        //Platforms[] = GameObject.FindGameObjectsWithTag("Platform");
+        Platforms = GameObject.FindGameObjectsWithTag("Platform");
     }
 
     public void Timer()
@@ -117,5 +117,18 @@ public class GameController : MonoBehaviour
         {
             Time.timeScale = 0;
         }
+    }
+
+    public void VictoryCondition()
+    {
+        int i = 0;
+        bool condition;
+        //do
+        //{
+        //    if (Platforms[i].GetComponent<Platfotm>().stage)
+        //    {
+
+        //    }
+        //} while (condition);
     }
 }

@@ -56,8 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ABC_Script\Platform\Block.cs" />
+    <Compile Include="Assets\Scripts\ABC_Script\Game_Controller_ABC.cs" />
     <Compile Include="Assets\Platfotm.cs" />
     <Compile Include="Assets\Scripts\Controller\GameController.cs" />
+    <Compile Include="Assets\Plauer.cs" />
+    <Compile Include="Assets\Scripts\ABC_Script\CameraFollow.cs" />
     <Compile Include="Assets\UIController.cs" />
   </ItemGroup>
   <ItemGroup>
