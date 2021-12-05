@@ -7,9 +7,10 @@ using System;
 public class Game_Controller_ABC : MonoBehaviour
 {
     [Header("Main")]
-    public static int startPositinon;
+    private int startPositinon;
     private Transform Finish;
-    public Transform FinishPref;    
+    public Transform FinishPref;
+    public static bool vin;
 
     [Header("Player")]
     public Transform PlayerPrefab;
@@ -35,6 +36,9 @@ public class Game_Controller_ABC : MonoBehaviour
     public Transform WordUI;
     public float timer;
 
+    [Header("Key")]
+    TouchScreenKeyboard claviar;
+
 
     private void Awake()
     {
@@ -46,6 +50,8 @@ public class Game_Controller_ABC : MonoBehaviour
 
     private void Start()
     {
+        OpenKeyboard();
+        vin = false;
         Speed = 2;
         BlockABS = GameObject.FindGameObjectsWithTag("ABC");
         Array.Reverse(BlockABS);
@@ -62,6 +68,10 @@ public class Game_Controller_ABC : MonoBehaviour
         Timer();
     }
 
+    public void OpenKeyboard()
+    {
+        claviar = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+    }
     public void WordGenerator()
     {
         for (int i = 0; i < Dictionary.Length; i++)
@@ -93,13 +103,16 @@ public class Game_Controller_ABC : MonoBehaviour
     }
     public void PlayerMove()
     {
+        //Создаём игрока на уровне 
         Player = Instantiate(PlayerPrefab, transform.position + new Vector3(0, 1.21f, 0), Quaternion.identity);
     }
 
     public void WorldGenerator()
     {
+        //С колличеством задаваймым в инспекторе 
         for (int i = 0; i < LengthPlatform; i++)
         {
+            //Создаём платформу
             Platform = Instantiate(PlatformPrefab, transform.position + new Vector3(i, 0, 0), Quaternion.identity);
         }
     }
@@ -145,6 +158,8 @@ public class Game_Controller_ABC : MonoBehaviour
         Finish = Instantiate(FinishPref, Player.transform.position + new Vector3(32, 1, 0), Quaternion.identity);
         Finish.transform.Rotate(0, 0, 90); 
         WordUI.transform.GetChild(0).GetComponent<Text>().text = "Победа";
+        Time.timeScale = 0.1f;
+        vin = true;
     }
 
     public void PrintWordUi(int j)

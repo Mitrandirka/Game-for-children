@@ -63,6 +63,7 @@
     <Compile Include="Assets\Plauer.cs" />
     <Compile Include="Assets\Scripts\ABC_Script\CameraFollow.cs" />
     <Compile Include="Assets\UIController.cs" />
+    <Compile Include="Assets\UI_Manager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
